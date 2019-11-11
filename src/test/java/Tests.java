@@ -47,12 +47,6 @@ public class Tests{
     @Test
     public void testGetHelp(){
         String com = "/help";
-        Assert.assertEquals(Logic.getHelp(), "If you want to get a great math joke - write: /joke");
+        Assert.assertEquals(Logic.getHelp(), "Хочешь супер смешную математическую шутку - пиши: /joke");
     }
-
-    @Test
-    public void testRepeatCommand(){
-        Assert.assertEquals(Logic.repeatCommand(), "Enter the command, friend:");
-    }
-
 }
