@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80fdc38a-b16c-468c-9525-bae932c3b0fa" name="Default Changelist" comment="Commit add new func 3">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jokes.txt" afterDir="false" />
+    <list default="true" id="80fdc38a-b16c-468c-9525-bae932c3b0fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/chatBot/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatBot/JavaBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatBot/Launch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chatBot/Logic.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -322,7 +325,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574430552436</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Commit news">
+      <created>1574430804141</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1574430804141</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Commit numero">
+      <created>1574430999373</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1574430999373</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,6 +376,9 @@
     <MESSAGE value="Commit add new func 1" />
     <MESSAGE value="Commit add new func 2" />
     <MESSAGE value="Commit add new func 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit add new func 3" />
+    <MESSAGE value="Commit add new func 4" />
+    <MESSAGE value="Commit news" />
+    <MESSAGE value="Commit numero" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit numero" />
   </component>
 </project>
