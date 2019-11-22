@@ -9,8 +9,7 @@ public class JavaBot{
         return 1 + (int) (Math.random() * end);
     }
     public  static HashMap<Integer, String> jokes
-            = fillDict(new File(System.getProperty("user.dir") + "\\src\\main\\resources\\jokes.txt"));
-
+            = fillDict(new File(System.getProperty("user.dir") + "/src/main/resources/jokes.txt"));
     public static void addJoke(String joke, HashMap<Integer, String> jokes){
         jokes.put(jokes.size() + 1, joke);
     }
