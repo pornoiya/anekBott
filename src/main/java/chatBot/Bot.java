@@ -31,11 +31,11 @@ public class Bot extends TelegramLongPollingBot {
         if (message != null && message.hasText()){
             switch (message.getText()){
                 case "/help":
-                case "/помощь":
+                case "помощь":
                     sendMsg(message, Logic.getHelp());
                   break;
                 case "/joke":
-                case "/шутка":
+                case "шутка":
                     sendMsg(message, JavaBot.getJoke(true));
                     break;
                 default:
@@ -53,8 +53,8 @@ public class Bot extends TelegramLongPollingBot {
 
         List<KeyboardRow> keyboardRowList = new ArrayList<>();
         KeyboardRow keyboarrdFirstRow = new KeyboardRow();
-        keyboarrdFirstRow.add(new KeyboardButton("/помощь"));
-        keyboarrdFirstRow.add(new KeyboardButton("/шутка"));
+        keyboarrdFirstRow.add(new KeyboardButton("помощь"));
+        keyboarrdFirstRow.add(new KeyboardButton("шутка"));
 
         keyboardRowList.add(keyboarrdFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
