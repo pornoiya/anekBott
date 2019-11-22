@@ -1,6 +1,7 @@
 package chatBot;
 
 import java.util.*;
+import java.util.Scanner;
 
 
 public class JavaBot {
@@ -29,6 +30,13 @@ public class JavaBot {
         else{
             return numberJoke.get(1);
         }
+    }
+
+    public static String takeJoke(){
+        Scanner sc = new Scanner(System.in);
+        var joke = "";
+        joke = sc.nextLine();
+        return joke;
     }
 
 }
