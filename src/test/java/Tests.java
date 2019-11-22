@@ -1,4 +1,3 @@
-import chatBot.Dialog;
 import chatBot.JavaBot;
 import org.junit.Assert;
 import org.junit.Test;
