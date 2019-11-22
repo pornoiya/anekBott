@@ -4,7 +4,7 @@ import chatBot.JavaBot;
 
 public class Logic {
     public static String getInfo(){
-        return("Привет!\nЕсли хочешь получить супер смешную математическую шутку - пиши: /joke\nЕсли требуется помощь - пиши: /help");
+        return("Привет!\nЕсли хочешь получить супер смешную математическую шутку - нажимай кнопку или пиши: /joke\nЕсли требуется помощь - пиши: /help");
     }
 
     public static String processCommand(String command){
@@ -17,10 +17,6 @@ public class Logic {
 
     }
     public static String getHelp(){
-        return("Хочешь супер смешную математическую шутку - пиши: /joke");
-    }
-
-    public static String repeatCommand(){
-        return("Enter the command, friend:");
+        return("Хочешь супер смешную математическую шутку - нажимай кнопку или пиши: /joke");
     }
 }
