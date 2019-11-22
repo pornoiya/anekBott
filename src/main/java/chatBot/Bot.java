@@ -36,11 +36,11 @@ public class Bot extends TelegramLongPollingBot {
                     break;
                 case "/joke":
                 case "шутка":
-                    sendMsg(message, JavaBot.getJoke(true));
+                    sendMsg(message, JavaBot.getRandomJoke(JavaBot.jokes));
                     break;
-                case "/add":
+                case "add":
                 case "добавить":
-                    sendMsg(message, JavaBot.takeJoke());
+                    sendMsg(message, update.getMessage().getText());
                     break;
                 default:
                     sendMsg(message, Logic.getInfo());
@@ -76,6 +76,7 @@ public class Bot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+
     }
     public static void disableWarning() {
         System.err.close();

@@ -1,42 +1,40 @@
 package chatBot;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
-import java.util.Scanner;
 
+public class JavaBot{
+    public static int getRandomNum(int end) {
+        return 1 + (int) (Math.random() * end);
+    }
+    public  static HashMap<Integer, String> jokes
+            = fillDict(new File(System.getProperty("user.dir") + "\\src\\main\\resources\\jokes.txt"));
 
-public class JavaBot {
-
-    public static int getRandomNum(int start, int end) {
-        return start + (int) (Math.random() * end);
+    public static void addJoke(String joke, HashMap<Integer, String> jokes){
+        jokes.put(jokes.size() + 1, joke);
     }
 
-    public static HashMap<Integer, String> fillDictionary(HashMap<Integer, String> dict, ArrayList<String> data){
-        if (dict.size() == 0){
-            for (String item: data) {
-
-                dict.put(Character.getNumericValue(item.charAt(0)), item.substring(1));
+    public static HashMap<Integer, String> fillDict(File file){
+        var iter = 1;
+        var dict = new HashMap<Integer, String>();
+        try(Scanner fileContent = new Scanner(file)) {
+            while (fileContent.hasNextLine()) {
+                dict.put(iter, fileContent.nextLine());
+                iter++;
             }
+        }
+        catch(IOException ex) {
+            System.out.println(ex.getMessage());
         }
         return dict;
     }
 
-    public static String getJoke(boolean isRandom) {
-        HashMap<Integer, String> numberJoke = new HashMap<Integer, String>();
-        ArrayList<String> lines = Jokes.jokesBase();
-        numberJoke = fillDictionary(numberJoke, lines);
-        if (isRandom){
-            return numberJoke.get(getRandomNum(1, Jokes.jokesBase().size()));
-        }
-        else{
-            return numberJoke.get(1);
-        }
+    public static String getRandomJoke(HashMap<Integer, String> jokes) {
+        return jokes.get(getRandomNum(jokes.size()));
     }
 
-    public static String takeJoke(){
-        Scanner sc = new Scanner(System.in);
-        var joke = "";
-        joke = sc.nextLine();
-        return joke;
+    public static void main(String[] args) {
+        System.out.println(getRandomJoke(JavaBot.jokes));
     }
-
 }
