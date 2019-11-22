@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80fdc38a-b16c-468c-9525-bae932c3b0fa" name="Default Changelist" comment="" />
+    <list default="true" id="80fdc38a-b16c-468c-9525-bae932c3b0fa" name="Default Changelist" comment="Commit add new func 3">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jokes.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574430311704</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Commit add new func 2">
+      <created>1574430552436</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1574430552436</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -349,6 +358,7 @@
     <MESSAGE value="Commit add  new buttons4.5" />
     <MESSAGE value="Commit add new func 1" />
     <MESSAGE value="Commit add new func 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit add new func 2" />
+    <MESSAGE value="Commit add new func 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit add new func 3" />
   </component>
 </project>
