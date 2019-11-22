@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80fdc38a-b16c-468c-9525-bae932c3b0fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/chatBot/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatBot/Bot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -256,7 +257,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574422678836</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Commit add  new buttons4">
+      <created>1574422993777</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574422993777</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Commit add  new buttons4.1">
+      <created>1574423121407</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1574423121407</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,6 +299,8 @@
     <MESSAGE value="Commit add  new buttons" />
     <MESSAGE value="Commit add  new buttons2" />
     <MESSAGE value="Commit add  new buttons3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit add  new buttons3" />
+    <MESSAGE value="Commit add  new buttons4" />
+    <MESSAGE value="Commit add  new buttons4.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit add  new buttons4.1" />
   </component>
 </project>

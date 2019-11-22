@@ -32,11 +32,13 @@ public class Bot extends TelegramLongPollingBot {
             switch (message.getText()){
                 case "/help":
                     sendMsg(message, Logic.getHelp());
-                  break;
+                    break;
                 case "помощь":
                     sendMsg(message, Logic.getHelp());
+                    break;
                 case "/joke":
                     sendMsg(message, JavaBot.getJoke(true));
+                    break;
                 case "шутка":
                     sendMsg(message, JavaBot.getJoke(true));
                     break;
