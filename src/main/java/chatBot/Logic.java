@@ -9,7 +9,7 @@ public class Logic {
 
     public static String processCommand(String command){
         if (command.equals("/joke")) {
-            return(JavaBot.getJoke(true));
+            return(JavaBot.getRandomJoke(JavaBot.jokes));
         }
         else {
             return(getHelp());
