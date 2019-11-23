@@ -12,8 +12,10 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class Bot extends TelegramLongPollingBot {
     public static void main(String[] args) {
@@ -29,7 +31,10 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
         if (message != null && message.hasText()){
-            switch (message.getText()){
+
+            StringTokenizer tokenizer = new StringTokenizer(message.getText());
+            String firstArg = tokenizer.hasMoreTokens() ? tokenizer.nextToken() : ""; //штука которая даст нам первое слово из запроса
+            switch (firstArg){
                 case "/help":
                 case "помощь":
                     sendMsg(message, Logic.getHelp());
@@ -38,10 +43,16 @@ public class Bot extends TelegramLongPollingBot {
                 case "шутка":
                     sendMsg(message, JavaBot.getRandomJoke(JavaBot.jokes));
                     break;
-                case "add":
+                case "/add":
                 case "добавить":
-                    sendMsg(message, update.getMessage().getText());
+                    JavaBot.addJoke(message.getText());
+                    sendMsg(message, "Шутка добавлена!!!");
                     break;
+                case "/see":
+                case "посмотреть":
+                    sendMsg(message, JavaBot.getAllJokes().toString());
+                    break;
+
                 default:
                     sendMsg(message, Logic.getInfo());
             }
@@ -60,6 +71,7 @@ public class Bot extends TelegramLongPollingBot {
         keyboarrdFirstRow.add(new KeyboardButton("помощь"));
         keyboarrdFirstRow.add(new KeyboardButton("шутка"));
         keyboarrdFirstRow.add(new KeyboardButton("добавить"));
+        keyboarrdFirstRow.add(new KeyboardButton("посмотреть"));
 
         keyboardRowList.add(keyboarrdFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
@@ -83,10 +95,10 @@ public class Bot extends TelegramLongPollingBot {
         System.setErr(System.out);
     }
     public String getBotUsername() {
-        return "anekBot";
+        return "manekBot2";
     }
 
     public String getBotToken() {
-        return "1039575058:AAGVSZmNiV-H8gGlaGmIUPw42WuiilHBycI";
+        return "1007634060:AAGRhtBR65vHAc9h2dHTHKjwDYQNLEPO3Z4";
     }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80fdc38a-b16c-468c-9525-bae932c3b0fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/chatBot/JavaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatBot/JavaBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -350,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574431178829</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Commit numero3">
+      <created>1574431609049</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1574431609049</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,7 +374,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit 1" />
     <MESSAGE value="Commit 2" />
     <MESSAGE value="Commit 3" />
     <MESSAGE value="Commit 4" />
@@ -392,6 +398,7 @@
     <MESSAGE value="Commit numero" />
     <MESSAGE value="Commit numero1" />
     <MESSAGE value="Commit numero2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit numero2" />
+    <MESSAGE value="Commit numero3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit numero3" />
   </component>
 </project>

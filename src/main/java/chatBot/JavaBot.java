@@ -5,18 +5,20 @@ import java.io.IOException;
 import java.util.*;
 
 public class JavaBot{
+    public static File file = new File(System.getProperty("user.dir") + "/src/main/resources/jokes.txt");
     public static int getRandomNum(int end) {
         return 1 + (int) (Math.random() * end);
     }
-    public  static HashMap<Integer, String> jokes
-            = fillDict(new File(System.getProperty("user.dir") + "/src/main/resources/jokes.txt"));
-    public static void addJoke(String joke, HashMap<Integer, String> jokes){
+    public  static Map<Integer, String> jokes
+            = fillDict(file);
+    public static void addJoke(String joke){
+
         jokes.put(jokes.size() + 1, joke);
     }
 
-    public static HashMap<Integer, String> fillDict(File file){
+    public static Map<Integer, String> fillDict(File file){
         var iter = 1;
-        var dict = new HashMap<Integer, String>();
+        HashMap<Integer, String> dict = new HashMap<>();
         try(Scanner fileContent = new Scanner(file)) {
             while (fileContent.hasNextLine()) {
                 dict.put(iter, fileContent.nextLine());
@@ -29,11 +31,15 @@ public class JavaBot{
         return dict;
     }
 
-    public static String getRandomJoke(HashMap<Integer, String> jokes) {
+    public static String getRandomJoke(Map<Integer, String> jokes) {
         return jokes.get(getRandomNum(jokes.size()));
     }
 
     public static void main(String[] args) {
         System.out.println(getRandomJoke(JavaBot.jokes));
+    }
+
+    public static Map<Integer, String> getAllJokes(){
+        return jokes;
     }
 }
