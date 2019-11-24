@@ -37,7 +37,7 @@ public class Bot extends TelegramLongPollingBot {
             switch (firstArg) {
                 case "/help":
                 case "помощь":
-                    sendMsg(message, "Хочешь супер смешную математическую шутку - нажимай кнопку или пиши: /joke");
+                    sendMsg(message, "Хочешь супер смешную математическую шутку - нажимай кнопку или пиши: /joke\n Чтобы добавить шутку - пиши /add *шутка*");
                     break;
                 case "/joke":
                 case "шутка":
@@ -73,7 +73,6 @@ public class Bot extends TelegramLongPollingBot {
         KeyboardRow keyboarrdFirstRow = new KeyboardRow();
         keyboarrdFirstRow.add(new KeyboardButton("помощь"));
         keyboarrdFirstRow.add(new KeyboardButton("шутка"));
-        keyboarrdFirstRow.add(new KeyboardButton("добавить"));
         keyboarrdFirstRow.add(new KeyboardButton("посмотреть"));
 
         keyboardRowList.add(keyboarrdFirstRow);
