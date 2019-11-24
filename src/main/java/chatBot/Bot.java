@@ -47,7 +47,7 @@ public class Bot extends TelegramLongPollingBot {
                 case "добавить":
                     JavaBot.addJoke(message.getText().replace(firstArg, ""));
                     var s = message.getText().replace(firstArg, "");
-                    sendMsg(message, message.getText());
+                    //sendMsg(message, message.getText());
                     sendMsg(message, s);
                     sendMsg(message, "Шутка добавлена!!!");
                     break;
