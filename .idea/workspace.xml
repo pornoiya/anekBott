@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="80fdc38a-b16c-468c-9525-bae932c3b0fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatBot/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chatBot/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatBot/Jokes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chatBot/Logic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -357,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574431609049</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="hope it works">
+      <created>1574518642758</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1574518642758</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,7 +385,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit 2" />
     <MESSAGE value="Commit 3" />
     <MESSAGE value="Commit 4" />
     <MESSAGE value="Commit 5" />
@@ -399,6 +409,7 @@
     <MESSAGE value="Commit numero1" />
     <MESSAGE value="Commit numero2" />
     <MESSAGE value="Commit numero3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit numero3" />
+    <MESSAGE value="hope it works" />
+    <option name="LAST_COMMIT_MESSAGE" value="hope it works" />
   </component>
 </project>

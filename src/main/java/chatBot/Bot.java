@@ -37,7 +37,7 @@ public class Bot extends TelegramLongPollingBot {
             switch (firstArg){
                 case "/help":
                 case "помощь":
-                    sendMsg(message, Logic.getHelp());
+                    sendMsg(message, "Хочешь супер смешную математическую шутку - нажимай кнопку или пиши: /joke");
                     break;
                 case "/joke":
                 case "шутка":
@@ -54,7 +54,7 @@ public class Bot extends TelegramLongPollingBot {
                     break;
 
                 default:
-                    sendMsg(message, Logic.getInfo());
+                    sendMsg(message, "Если хочешь получить супер смешную математическую шутку - нажимай кнопку или пиши: /joke\nЕсли требуется помощь - пиши: /help");
             }
         }
     }
