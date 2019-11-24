@@ -12,7 +12,6 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -23,38 +22,35 @@ public class Bot extends TelegramLongPollingBot {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
             telegramBotsApi.registerBot(new Bot());
-        } catch (TelegramApiRequestException e) {
+        } catch (TelegramApiRequestException e){
             e.printStackTrace();
         }
     }
 
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
-        if (message != null && message.hasText()) {
+        if (message != null && message.hasText()){
 
             StringTokenizer tokenizer = new StringTokenizer(message.getText());
             String firstArg = tokenizer.hasMoreTokens() ? tokenizer.nextToken() : ""; //штука которая даст нам первое слово из запроса
-            switch (firstArg) {
+            switch (firstArg){
                 case "/help":
                 case "помощь":
-                    sendMsg(message, "Хочешь супер смешную математическую шутку - нажимай кнопку или пиши: /joke\n Чтобы добавить шутку - пиши /add *шутка*");
+                    sendMsg(message, "Хочешь супер смешную математическую шутку - нажимай кнопку или пиши: /joke");
                     break;
                 case "/joke":
                 case "шутка":
-                    sendMsg(message, JavaBot.getRandomJoke(JavaBot.jokes));
+                    sendMsg(message, DataBase.getRandomJoke());
                     break;
                 case "/add":
-                case "добавить":
-                    JavaBot.addJoke(message.getText().replace(firstArg, ""));
-                    var s = message.getText().replace(firstArg, "");
-                    //sendMsg(message, message.getText());
-                    sendMsg(message, s);
+                    DataBase.insertJoke(message.getText().replace(firstArg + " ", ""));
+                    //JavaBot.addJoke(message.getText().replace(firstArg, ""));
                     sendMsg(message, "Шутка добавлена!!!");
                     break;
-                case "/see":
+                /*case "/see":
                 case "посмотреть":
                     sendMsg(message, JavaBot.getAllJokes().toString());
-                    break;
+                    break;*/
 
                 default:
                     sendMsg(message, "Если хочешь получить супер смешную математическую шутку - нажимай кнопку или пиши: /joke\nЕсли требуется помощь - пиши: /help");
@@ -62,7 +58,7 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    public void setButtons(SendMessage sendMessage) {
+    public void setButtons(SendMessage sendMessage){
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
         replyKeyboardMarkup.setSelective(true);
@@ -70,33 +66,32 @@ public class Bot extends TelegramLongPollingBot {
         replyKeyboardMarkup.setOneTimeKeyboard(false);
 
         List<KeyboardRow> keyboardRowList = new ArrayList<>();
-        KeyboardRow keyboarrdFirstRow = new KeyboardRow();
-        keyboarrdFirstRow.add(new KeyboardButton("помощь"));
-        keyboarrdFirstRow.add(new KeyboardButton("шутка"));
-        keyboarrdFirstRow.add(new KeyboardButton("посмотреть"));
+        KeyboardRow keyboardFirstRow = new KeyboardRow();
+        keyboardFirstRow.add(new KeyboardButton("помощь"));
+        keyboardFirstRow.add(new KeyboardButton("шутка"));
+        keyboardFirstRow.add(new KeyboardButton("посмотреть"));
 
-        keyboardRowList.add(keyboarrdFirstRow);
+        keyboardRowList.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
     }
 
-    public void sendMsg(Message message, String text) {
+    public void sendMsg(Message message, String text){
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(message.getChatId().toString());
         sendMessage.setText(text);
-        try {
+        try{
             setButtons(sendMessage);
             sendMessage(sendMessage);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-    }
 
+    }
     public static void disableWarning() {
         System.err.close();
         System.setErr(System.out);
     }
-
     public String getBotUsername() {
         return "manekBot2";
     }
