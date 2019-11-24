@@ -23,18 +23,18 @@ public class Bot extends TelegramLongPollingBot {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
             telegramBotsApi.registerBot(new Bot());
-        } catch (TelegramApiRequestException e){
+        } catch (TelegramApiRequestException e) {
             e.printStackTrace();
         }
     }
 
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
-        if (message != null && message.hasText()){
+        if (message != null && message.hasText()) {
 
             StringTokenizer tokenizer = new StringTokenizer(message.getText());
             String firstArg = tokenizer.hasMoreTokens() ? tokenizer.nextToken() : ""; //штука которая даст нам первое слово из запроса
-            switch (firstArg){
+            switch (firstArg) {
                 case "/help":
                 case "помощь":
                     sendMsg(message, "Хочешь супер смешную математическую шутку - нажимай кнопку или пиши: /joke");
@@ -45,7 +45,10 @@ public class Bot extends TelegramLongPollingBot {
                     break;
                 case "/add":
                 case "добавить":
-                    JavaBot.addJoke(message.getText());
+                    JavaBot.addJoke(message.getText().replace(firstArg, ""));
+                    var s = message.getText().replace(firstArg, "");
+                    sendMsg(message, message.getText());
+                    sendMsg(message, s);
                     sendMsg(message, "Шутка добавлена!!!");
                     break;
                 case "/see":
@@ -59,7 +62,7 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    public void setButtons(SendMessage sendMessage){
+    public void setButtons(SendMessage sendMessage) {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
         replyKeyboardMarkup.setSelective(true);
@@ -77,23 +80,24 @@ public class Bot extends TelegramLongPollingBot {
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
     }
 
-    public void sendMsg(Message message, String text){
+    public void sendMsg(Message message, String text) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(message.getChatId().toString());
         sendMessage.setText(text);
-        try{
+        try {
             setButtons(sendMessage);
             sendMessage(sendMessage);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-
     }
+
     public static void disableWarning() {
         System.err.close();
         System.setErr(System.out);
     }
+
     public String getBotUsername() {
         return "manekBot2";
     }
